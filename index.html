@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfólio — Giulia Oceano | Web Designer & Dev</title>
+
+  <!-- Open Graph / WhatsApp preview -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Giulia Oceano — Web Designer & Dev" />
+  <meta property="og:description" content="Design que conta histórias. Sites, sistemas e experiências digitais que unem estética e funcionalidade." />
+  <meta property="og:image"       content="https://portfolio-deploy-nine-sigma.vercel.app/og-image.jpg" />
+  <meta property="og:url"         content="https://portfolio-deploy-nine-sigma.vercel.app" />
+  <meta property="og:locale"      content="pt_BR" />
+  <meta name="twitter:card"       content="summary_large_image" />
+  <meta name="twitter:title"      content="Giulia Oceano — Web Designer & Dev" />
+  <meta name="twitter:description" content="Design que conta histórias. Sites, sistemas e experiências digitais." />
+  <meta name="twitter:image"      content="https://portfolio-deploy-nine-sigma.vercel.app/og-image.jpg" />
+  <meta name="description"        content="Portfólio de Giulia Oceano — Web Designer e Desenvolvedora. Criadora dos projetos Wowfólio, Dascá, ConnectCar, Desink e portfólio UGC." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --ink:    #0d0d0d;
+      --paper:  #f7f5f0;
+      --mid:    #7a7a7a;
+      --c1: #7A8450;
+      --c2: #c4963a;
+      --c3: #3a7bd5;
+      --c4: #1AC753;
+      --c5: #e05c8a;
+      --ff-serif: 'Playfair Display', Georgia, serif;
+      --ff-sans:  'DM Sans', system-ui, sans-serif;
+      --ff-mono:  'Space Mono', monospace;
+      --ease: cubic-bezier(.4, 0, .2, 1);
+    }
+
+    body { font-family: var(--ff-sans); background: var(--paper); color: var(--ink); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+    /* ── NAV ── */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; background: rgba(247,245,240,.92); border-bottom: 1px solid rgba(0,0,0,.08); backdrop-filter: blur(12px); }
+    .nav-logo { font-family: var(--ff-serif); font-size: 1.3rem; font-weight: 700; text-decoration: none; color: var(--ink); letter-spacing: -.01em; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--mid); font-size: .82rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; transition: color .2s; }
+    .nav-links a:hover { color: var(--ink); }
+
+    /* ── HERO ── */
+    #hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 140px 48px 72px; position: relative; overflow: hidden; background: var(--ink); }
+    .hero-bg { position: absolute; inset: 0; background: linear-gradient(135deg, #0d0d0d 0%, #1a1a2e 50%, #0d0d0d 100%); }
+    .blob { position: absolute; border-radius: 50%; filter: blur(90px); opacity: .45; animation: drift 12s ease-in-out infinite alternate; }
+    .blob-1 { width: 520px; height: 520px; background: var(--c1); top: -120px; right: -80px; animation-delay: 0s; }
+    .blob-2 { width: 400px; height: 400px; background: var(--c5); bottom: -60px; left: 28%; animation-delay: -4s; }
+    .blob-3 { width: 280px; height: 280px; background: var(--c3); top: 35%; left: -60px; animation-delay: -8s; }
+    @keyframes drift { from { transform: translate(0,0) scale(1); } to { transform: translate(28px,-28px) scale(1.07); } }
+    .hero-inner { position: relative; z-index: 2; max-width: 1200px; }
+    .hero-tag { display: inline-block; font-family: var(--ff-mono); font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.45); border: 1px solid rgba(255,255,255,.12); padding: 6px 16px; border-radius: 99px; margin-bottom: 32px; }
+    .hero-title { font-family: var(--ff-serif); font-size: clamp(3.5rem, 9vw, 8rem); font-weight: 900; line-height: .95; color: #fff; letter-spacing: -.03em; margin-bottom: 8px; }
+    .hero-title em { font-style: italic; background: linear-gradient(90deg, var(--c5), var(--c1)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-sub { font-size: 1.05rem; font-weight: 300; color: rgba(255,255,255,.5); max-width: 520px; line-height: 1.65; margin-top: 28px; margin-bottom: 48px; }
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: #fff; color: var(--ink); font-size: .82rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; padding: 14px 30px; border-radius: 99px; text-decoration: none; transition: transform .2s, box-shadow .2s; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,.35); }
+    .btn-ghost { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,.22); color: rgba(255,255,255,.7); font-size: .82rem; font-weight: 500; letter-spacing: .05em; text-transform: uppercase; padding: 14px 30px; border-radius: 99px; text-decoration: none; transition: border-color .2s, color .2s; }
+    .btn-ghost:hover { border-color: rgba(255,255,255,.65); color: #fff; }
+    .hero-scroll { position: absolute; bottom: 32px; right: 48px; z-index: 2; display: flex; align-items: center; gap: 10px; font-family: var(--ff-mono); font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.25); }
+    .scroll-line { width: 36px; height: 1px; background: rgba(255,255,255,.18); }
+
+    /* ── STRIP ── */
+    .strip { background: var(--ink); color: #fff; display: flex; justify-content: center; gap: 80px; padding: 40px 48px; flex-wrap: wrap; }
+    .strip-item { text-align: center; }
+    .strip-num { font-family: var(--ff-serif); font-style: italic; font-size: 2.8rem; font-weight: 700; line-height: 1; background: linear-gradient(90deg, var(--c5), var(--c1)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .strip-label { font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-top: 6px; }
+
+    /* ── SECTIONS ── */
+    section { padding: 100px 48px; }
+    .section-tag { font-family: var(--ff-mono); font-size: .66rem; letter-spacing: .2em; text-transform: uppercase; color: var(--mid); display: block; margin-bottom: 14px; }
+    .section-title { font-family: var(--ff-serif); font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 900; line-height: 1.05; letter-spacing: -.02em; }
+    .section-title em { font-style: italic; }
+
+    /* ── PROJECTS ── */
+    #projetos { background: var(--paper); }
+    .projects-header { max-width: 1200px; margin: 0 auto 64px; }
+    .projects-grid { max-width: 1200px; margin: 0 auto; display: grid; gap: 28px; grid-template-columns: 1fr 1fr; }
+
+    /* ── PROJECT CARD ── */
+    .project-card { border-radius: 20px; overflow: hidden; border: 1px solid rgba(0,0,0,.07); background: #fff; transition: transform .3s var(--ease), box-shadow .3s var(--ease); display: flex; flex-direction: column; }
+    .project-card:hover { transform: translateY(-5px); box-shadow: 0 24px 60px rgba(0,0,0,.11); }
+    .card-full { grid-column: 1 / -1; }
+
+    /* ── BROWSER MOCKUP ── */
+    .browser { border-bottom: 1px solid rgba(0,0,0,.07); overflow: hidden; flex-shrink: 0; }
+    .browser-bar { background: #f0f0f0; padding: 9px 14px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid rgba(0,0,0,.08); }
+    .b-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .b-dot-r { background: #ff5f57; }
+    .b-dot-y { background: #febc2e; }
+    .b-dot-g { background: #28c840; }
+    .b-url { flex: 1; background: #e2e2e2; border-radius: 5px; height: 20px; margin: 0 12px; display: flex; align-items: center; padding: 0 10px; font-family: var(--ff-mono); font-size: .58rem; color: #888; letter-spacing: .02em; }
+    .browser-screen { height: 220px; overflow: hidden; position: relative; }
+    .card-full .browser-screen { height: 260px; }
+
+    /* ── CARD INFO ── */
+    .card-body { padding: 28px 32px 32px; flex: 1; display: flex; flex-direction: column; }
+    .card-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 10px; gap: 12px; }
+    .card-name { font-family: var(--ff-serif); font-size: 1.6rem; font-weight: 900; letter-spacing: -.02em; line-height: 1; }
+    .card-name em { font-style: italic; color: var(--card-color); }
+    .card-num { font-family: var(--ff-mono); font-size: .6rem; letter-spacing: .18em; color: var(--card-color); background: color-mix(in srgb, var(--card-color) 10%, transparent); padding: 4px 10px; border-radius: 99px; white-space: nowrap; margin-top: 4px; }
+    .card-category { font-size: .72rem; font-weight: 500; color: var(--mid); margin-bottom: 12px; }
+    .card-desc { font-size: .9rem; line-height: 1.7; color: #444; flex: 1; margin-bottom: 24px; }
+    .card-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-top: 20px; border-top: 1px solid rgba(0,0,0,.06); }
+    .tech-stack { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tech-badge { font-family: var(--ff-mono); font-size: .6rem; padding: 3px 9px; border-radius: 5px; background: #f0f0f0; color: var(--mid); letter-spacing: .04em; }
+    .card-role { font-size: .74rem; font-weight: 600; color: var(--card-color); display: flex; align-items: center; gap: 5px; }
+    .card-role::before { content: '✦'; }
+
+
+    /* ════════════════════════════════════════
+       MOCKUP 1 — WOWFÓLIO
+    ════════════════════════════════════════ */
+    .mock-wow {
+      background: #f4f6ee;
+      height: 100%; padding: 0;
+      display: flex; flex-direction: column;
+    }
+    .wow-nav {
+      background: #f4f6ee; border-bottom: 1px solid rgba(30,33,16,.08);
+      padding: 10px 20px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .wow-logo { font-family: 'Playfair Display', serif; font-size: .85rem; font-weight: 700; color: #1e2110; }
+    .wow-nav-links { display: flex; gap: 14px; }
+    .wow-nav-links span { font-size: .55rem; color: #5a6040; font-weight: 500; }
+    .wow-btn { background: #7A8450; color: #fff; font-size: .5rem; padding: 4px 10px; border-radius: 99px; }
+    .wow-hero {
+      flex: 1; padding: 18px 20px 10px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: center;
+    }
+    .wow-headline { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 900; line-height: 1.1; color: #1e2110; }
+    .wow-headline em { font-style: italic; color: #7A8450; }
+    .wow-sub { font-size: .52rem; color: #5a6040; line-height: 1.5; margin-top: 6px; }
+    .wow-cta { display: inline-block; background: #7A8450; color: #fff; font-size: .48rem; padding: 5px 12px; border-radius: 99px; margin-top: 8px; }
+    .wow-cards { display: flex; flex-direction: column; gap: 6px; }
+    .wow-card { background: #fff; border-radius: 8px; padding: 8px 10px; border: 1px solid rgba(0,0,0,.06); }
+    .wow-card-tag { font-size: .42rem; color: #7A8450; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; }
+    .wow-card-title { font-family: 'Playfair Display', serif; font-size: .7rem; color: #1e2110; font-weight: 700; margin-top: 2px; }
+    .wow-card-line { height: 3px; background: linear-gradient(90deg, #7A8450, #c4a24e); border-radius: 2px; margin-top: 4px; }
+    .wow-stars { color: #c4a24e; font-size: .5rem; margin-top: 3px; }
+
+    /* ════════════════════════════════════════
+       MOCKUP 2 — DASCÁ
+    ════════════════════════════════════════ */
+    .mock-dasca {
+      background: #0f0e0c;
+      height: 100%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .dasca-overlay { position: absolute; inset: 0; background: rgba(0,0,0,.45); }
+    .dasca-bg-img {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, #1a1208 0%, #2d1f0a 50%, #0f0e0c 100%);
+    }
+    .dasca-grain {
+      position: absolute; inset: 0; opacity: .04;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    .dasca-content { position: relative; z-index: 2; text-align: center; }
+    .dasca-wordmark { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; letter-spacing: .3em; color: #f0e8d4; line-height: 1; }
+    .dasca-sub { font-size: .42rem; letter-spacing: .35em; text-transform: uppercase; color: rgba(240,232,212,.35); margin-top: 5px; }
+    .dasca-line { width: 28px; height: 1px; background: rgba(196,162,78,.4); margin: 10px auto; }
+    .dasca-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: .65rem; color: rgba(240,232,212,.7); letter-spacing: .08em; }
+    .dasca-cta { display: inline-block; margin-top: 10px; border: 1px solid rgba(196,162,78,.5); color: #c4a24e; font-size: .42rem; letter-spacing: .2em; text-transform: uppercase; padding: 5px 14px; }
+    .dasca-scarab { font-size: 1.8rem; margin-bottom: 6px; opacity: .6; }
+    .dasca-glow { position: absolute; width: 120px; height: 120px; background: radial-gradient(circle, rgba(196,162,78,.15) 0%, transparent 70%); top: 50%; left: 50%; transform: translate(-50%,-50%); }
+
+    /* ════════════════════════════════════════
+       MOCKUP 3 — CONNECTCAR
+    ════════════════════════════════════════ */
+    .mock-car {
+      background: #f0f2f5;
+      height: 100%; display: flex;
+    }
+    .car-sidebar { width: 100px; background: #0D1B5E; padding: 12px 8px; display: flex; flex-direction: column; gap: 4px; }
+    .car-logo { padding: 0 4px 10px; border-bottom: 1px solid rgba(255,255,255,.08); margin-bottom: 6px; }
+    .car-logo-text { font-size: .55rem; font-weight: 700; color: #fff; letter-spacing: .05em; }
+    .car-logo-sub { font-size: .38rem; color: rgba(255,255,255,.35); letter-spacing: .05em; }
+    .car-nav-item { display: flex; align-items: center; gap: 6px; padding: 5px 6px; border-radius: 6px; font-size: .48rem; color: rgba(255,255,255,.65); }
+    .car-nav-item.active { background: #C9A84C; color: #0D1B5E; font-weight: 600; }
+    .car-nav-icon { font-size: .7rem; }
+    .car-main { flex: 1; padding: 14px 14px 10px; overflow: hidden; }
+    .car-header { font-size: .65rem; font-weight: 700; color: #0D1B5E; margin-bottom: 10px; }
+    .car-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 6px; margin-bottom: 10px; }
+    .car-stat { background: #fff; border-radius: 8px; padding: 8px; border-left: 3px solid var(--sc); }
+    .car-stat-num { font-size: .75rem; font-weight: 700; color: var(--sc); }
+    .car-stat-label { font-size: .42rem; color: #888; margin-top: 1px; }
+    .car-table { background: #fff; border-radius: 8px; overflow: hidden; }
+    .car-table-head { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 0; background: #f8f9fb; padding: 5px 8px; }
+    .car-table-head span { font-size: .42rem; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: .06em; }
+    .car-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 0; padding: 5px 8px; border-top: 1px solid #f0f0f0; }
+    .car-row span { font-size: .48rem; color: #333; display: flex; align-items: center; }
+    .car-badge { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: .4rem; font-weight: 600; }
+
+    /* ════════════════════════════════════════
+       MOCKUP 4 — DESINK
+    ════════════════════════════════════════ */
+    .mock-desink {
+      background: #0e1514;
+      height: 100%; display: flex;
+    }
+    .de-sidebar { width: 100px; background: #0e1514; border-right: 1px solid rgba(255,255,255,.06); padding: 12px 8px; display: flex; flex-direction: column; }
+    .de-logo-text { font-family: 'Space Mono', monospace; font-size: .72rem; font-weight: 700; color: #fff; letter-spacing: .08em; }
+    .de-logo-sub { font-size: .36rem; color: rgba(255,255,255,.3); letter-spacing: .3em; text-transform: uppercase; margin-top: 2px; }
+    .de-divider { height: 1px; background: linear-gradient(90deg, #1AC753 0%, transparent 80%); margin: 8px 0; }
+    .de-nav { display: flex; flex-direction: column; gap: 2px; }
+    .de-nav-item { display: flex; align-items: center; gap: 5px; padding: 5px 6px; border-radius: 6px; font-size: .46rem; color: rgba(255,255,255,.5); }
+    .de-nav-item.active { background: rgba(26,199,83,.12); color: #1AC753; font-weight: 600; }
+    .de-main { flex: 1; padding: 14px; overflow: hidden; }
+    .de-date { font-size: .46rem; color: rgba(255,255,255,.35); text-transform: capitalize; margin-bottom: 8px; }
+    .de-header { font-size: .65rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
+    .de-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 5px; margin-bottom: 10px; }
+    .de-stat { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.06); border-radius: 8px; padding: 7px; }
+    .de-stat-num { font-size: .75rem; font-weight: 700; color: #1AC753; }
+    .de-stat-label { font-size: .4rem; color: rgba(255,255,255,.35); margin-top: 1px; }
+    .de-sessions { display: flex; flex-direction: column; gap: 4px; }
+    .de-session-row { display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,.03); border-radius: 6px; padding: 5px 8px; }
+    .de-session-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+    .de-session-name { font-size: .48rem; color: rgba(255,255,255,.75); font-weight: 500; flex: 1; }
+    .de-session-time { font-size: .42rem; color: rgba(255,255,255,.3); font-family: 'Space Mono', monospace; }
+    .de-session-badge { font-size: .38rem; padding: 2px 6px; border-radius: 4px; font-weight: 600; }
+
+    /* ════════════════════════════════════════
+       MOCKUP 5 — SITE UGC
+    ════════════════════════════════════════ */
+    .mock-ugc {
+      background: #fdf8f5;
+      height: 100%; display: flex; flex-direction: column; overflow: hidden;
+    }
+    .ugc-nav { padding: 8px 16px; border-bottom: 1px solid rgba(0,0,0,.06); display: flex; justify-content: space-between; align-items: center; background: #fdf8f5; }
+    .ugc-logo { font-family: 'Playfair Display', serif; font-size: .75rem; font-weight: 700; color: #1a1a1a; }
+    .ugc-nav-links { display: flex; gap: 10px; }
+    .ugc-nav-links span { font-size: .44rem; color: #888; font-weight: 500; }
+    .ugc-hero { flex: 1; display: grid; grid-template-columns: 1fr .8fr; gap: 10px; padding: 14px 16px; align-items: center; }
+    .ugc-text {}
+    .ugc-tag { display: inline-block; font-size: .4rem; letter-spacing: .12em; text-transform: uppercase; color: #c87fa4; border: 1px solid rgba(200,127,164,.25); padding: 3px 8px; border-radius: 99px; margin-bottom: 8px; }
+    .ugc-headline { font-family: 'Playfair Display', serif; font-size: .85rem; font-weight: 900; line-height: 1.2; color: #1a1a1a; }
+    .ugc-headline em { font-style: italic; color: #c87fa4; }
+    .ugc-sub { font-size: .44rem; color: #888; line-height: 1.5; margin-top: 5px; }
+    .ugc-ctas { display: flex; gap: 5px; margin-top: 8px; }
+    .ugc-btn-p { background: #c87fa4; color: #fff; font-size: .42rem; padding: 4px 10px; border-radius: 99px; }
+    .ugc-btn-g { border: 1px solid rgba(0,0,0,.15); color: #555; font-size: .42rem; padding: 4px 10px; border-radius: 99px; }
+    .ugc-visual { display: flex; justify-content: center; align-items: center; }
+    .ugc-card { background: #fff; border-radius: 12px; padding: 10px; box-shadow: 0 8px 24px rgba(200,127,164,.15); position: relative; }
+    .ugc-photo { width: 64px; height: 80px; background: linear-gradient(160deg, #f0c4d4, #e8a0bc); border-radius: 8px; margin: 0 auto; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; }
+    .ugc-name { font-family: 'Playfair Display', serif; font-size: .52rem; font-weight: 700; color: #1a1a1a; text-align: center; margin-top: 5px; }
+    .ugc-handle { font-size: .4rem; color: #c87fa4; text-align: center; }
+    .ugc-flor1 { position: absolute; top: -8px; right: -8px; font-size: .9rem; }
+    .ugc-flor2 { position: absolute; bottom: -6px; left: -8px; font-size: .7rem; }
+    .ugc-marquee { background: #f5eff5; padding: 4px 0; overflow: hidden; border-top: 1px solid rgba(200,127,164,.1); }
+    .ugc-marquee-inner { display: flex; gap: 12px; white-space: nowrap; animation: scroll-x 10s linear infinite; }
+    .ugc-marquee span { font-size: .4rem; color: #c87fa4; letter-spacing: .06em; text-transform: uppercase; font-weight: 500; }
+    @keyframes scroll-x { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+
+    /* ── ABOUT ── */
+    #sobre { background: var(--ink); color: #fff; }
+    .about-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .about-left .section-tag { color: rgba(255,255,255,.35); }
+    .about-left .section-title { color: #fff; }
+    .about-left .section-title em { background: linear-gradient(90deg, var(--c5), var(--c1)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .about-text { margin-top: 28px; font-size: .92rem; line-height: 1.8; color: rgba(255,255,255,.55); display: flex; flex-direction: column; gap: 14px; }
+    .about-right { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .skill-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); border-radius: 16px; padding: 22px 18px; transition: background .2s; }
+    .skill-card:hover { background: rgba(255,255,255,.07); }
+    .skill-icon { font-size: 1.5rem; margin-bottom: 10px; }
+    .skill-name { font-size: .82rem; font-weight: 600; color: #fff; margin-bottom: 5px; }
+    .skill-detail { font-size: .72rem; color: rgba(255,255,255,.35); line-height: 1.5; }
+
+    /* ── STACK ── */
+    #stack { background: var(--paper); }
+    .stack-inner { max-width: 1200px; margin: 0 auto; }
+    .stack-header { text-align: center; margin-bottom: 48px; }
+    .stack-grid { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+    .stack-pill { display: flex; align-items: center; gap: 7px; padding: 10px 22px; border-radius: 99px; border: 1px solid rgba(0,0,0,.1); background: #fff; font-size: .8rem; font-weight: 500; color: var(--ink); transition: transform .2s, box-shadow .2s; }
+    .stack-pill:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,.08); }
+    .dot { width: 8px; height: 8px; border-radius: 50%; }
+
+    /* ── CONTACT ── */
+    #contato { background: var(--ink); color: #fff; text-align: center; padding: 120px 48px; }
+    .contact-inner { max-width: 640px; margin: 0 auto; }
+    .contact-inner .section-tag { color: rgba(255,255,255,.35); }
+    .contact-title { font-family: var(--ff-serif); font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 900; line-height: 1; letter-spacing: -.03em; color: #fff; margin: 16px 0 20px; }
+    .contact-title em { font-style: italic; background: linear-gradient(90deg, var(--c5), var(--c1)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .contact-sub { font-size: .95rem; color: rgba(255,255,255,.45); margin-bottom: 44px; line-height: 1.7; }
+    .contact-email { display: inline-block; font-family: var(--ff-serif); font-style: italic; font-size: 1.35rem; color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.18); padding-bottom: 4px; transition: border-color .2s; margin-bottom: 36px; }
+    .contact-email:hover { border-color: var(--c5); }
+
+    /* ── WHATSAPP FLOAT ── */
+    .wa-float {
+      position: fixed; bottom: 28px; right: 28px; z-index: 999;
+      width: 56px; height: 56px; border-radius: 50%;
+      background: #25D366;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,.45);
+      text-decoration: none;
+      transition: transform .25s, box-shadow .25s;
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 8px 32px rgba(37,211,102,.6); }
+    .wa-float svg { width: 28px; height: 28px; fill: #fff; }
+    .wa-tooltip {
+      position: absolute; right: 68px; top: 50%; transform: translateY(-50%);
+      background: #111; color: #fff; font-size: .72rem; font-weight: 500;
+      padding: 6px 14px; border-radius: 8px; white-space: nowrap;
+      opacity: 0; pointer-events: none;
+      transition: opacity .2s;
+    }
+    .wa-float:hover .wa-tooltip { opacity: 1; }
+
+    /* ── FOOTER ── */
+    footer { background: #080808; color: rgba(255,255,255,.25); padding: 24px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: .73rem; letter-spacing: .05em; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      #hero { padding: 120px 20px 56px; }
+      section { padding: 64px 20px; }
+      .strip { gap: 32px; padding: 28px 20px; flex-wrap: wrap; }
+      .projects-grid { grid-template-columns: 1fr; gap: 20px; }
+      .card-full { grid-column: 1; }
+      .browser-screen { height: 180px; }
+      .card-body { padding: 22px 20px 24px; }
+      .card-name { font-size: 1.4rem; }
+      .card-top { flex-wrap: wrap; gap: 8px; }
+      .about-inner { grid-template-columns: 1fr; gap: 40px; }
+      .about-right { grid-template-columns: 1fr 1fr; }
+      footer { padding: 18px 20px; flex-direction: column; text-align: center; gap: 6px; }
+      .wa-float { width: 50px; height: 50px; bottom: 20px; right: 20px; }
+      .wa-float svg { width: 24px; height: 24px; }
+    }
+    @media (max-width: 600px) {
+      .hero-title { font-size: 2.6rem; }
+      .hero-sub { font-size: .92rem; }
+      .strip { justify-content: space-around; gap: 24px; }
+      .strip-item { width: 40%; }
+      .strip-num { font-size: 2.2rem; }
+      .about-right { grid-template-columns: 1fr; }
+      .card-body { padding: 18px 16px 20px; }
+      .card-desc { font-size: .85rem; }
+      .card-footer { flex-direction: column; align-items: flex-start; gap: 10px; }
+      .browser-screen { height: 160px; }
+      .browser-bar { padding: 7px 10px; }
+      .b-url { font-size: .5rem; }
+      .section-title { font-size: 1.8rem; }
+      #contato { padding: 80px 20px; }
+      .contact-title { font-size: 2.2rem; }
+      .contact-email { font-size: 1.1rem; }
+      .wa-tooltip { display: none; }
+    }
+    @media (max-width: 380px) {
+      .hero-title { font-size: 2.1rem; }
+      .card-name { font-size: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="#hero">Giulia Oceano.</a>
+    <ul class="nav-links">
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="hero-inner">
+      <span class="hero-tag">✦ Web Designer &amp; Dev — portfólio 2026</span>
+      <h1 class="hero-title">design que<br /><em>conta histórias.</em></h1>
+      <p class="hero-sub">Crio interfaces, sistemas e experiências digitais que unem estética e funcionalidade — do site institucional ao sistema de gestão completo.</p>
+      <div class="hero-ctas">
+        <a href="#projetos" class="btn-primary">ver projetos →</a>
+        <a href="#contato" class="btn-ghost">entrar em contato</a>
+      </div>
+    </div>
+    <div class="hero-scroll"><div class="scroll-line"></div>scroll</div>
+  </section>
+
+  <!-- STRIP -->
+  <div class="strip">
+    <div class="strip-item"><div class="strip-num">5</div><div class="strip-label">Projetos entregues</div></div>
+    <div class="strip-item"><div class="strip-num">3</div><div class="strip-label">Sistemas fullstack</div></div>
+    <div class="strip-item"><div class="strip-num">2</div><div class="strip-label">Sites institucionais</div></div>
+    <div class="strip-item"><div class="strip-num">∞</div><div class="strip-label">Horas de café</div></div>
+  </div>
+
+  <!-- PROJECTS -->
+  <section id="projetos">
+    <div class="projects-header">
+      <span class="section-tag">// projetos selecionados</span>
+      <h2 class="section-title">o que eu <em>construí</em></h2>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- 01 · WOWFÓLIO (full width) -->
+      <div class="card-full">
+        <div class="project-card" style="--card-color: var(--c1)">
+          <div class="browser">
+            <div class="browser-bar">
+              <div class="b-dot b-dot-r"></div>
+              <div class="b-dot b-dot-y"></div>
+              <div class="b-dot b-dot-g"></div>
+              <div class="b-url">✦ wowfolio.vercel.app</div>
+            </div>
+            <div class="browser-screen">
+              <div class="mock-wow">
+                <div class="wow-nav">
+                  <span class="wow-logo">Wowfolio ✦</span>
+                  <div class="wow-nav-links">
+                    <span>Templates</span>
+                    <span>Previews</span>
+                    <span>Preços</span>
+                    <span class="wow-btn">Comprar</span>
+                  </div>
+                </div>
+                <div class="wow-hero">
+                  <div>
+                    <div class="wow-headline">Templates de portfólio que<br /><em>fecham brand deals.</em></div>
+                    <div class="wow-sub">Editáveis, bonitos e prontos em minutos. Mostre seu valor, pitche marcas, seja paga.</div>
+                    <span class="wow-cta">ver templates →</span>
+                  </div>
+                  <div class="wow-cards">
+                    <div class="wow-card">
+                      <div class="wow-card-tag">✦ The Creator Kit</div>
+                      <div class="wow-card-title">Portfolio Template</div>
+                      <div class="wow-card-line"></div>
+                      <div class="wow-stars">★★★★★</div>
+                    </div>
+                    <div class="wow-card">
+                      <div class="wow-card-tag">✦ Media Kit</div>
+                      <div class="wow-card-title">Brand Pitch Template</div>
+                      <div class="wow-card-line" style="background: linear-gradient(90deg,#c4a24e,#7A8450)"></div>
+                      <div class="wow-stars">★★★★★</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-top">
+              <h3 class="card-name">Wow<em>fólio</em></h3>
+              <span class="card-num">01 / produto digital</span>
+            </div>
+            <div class="card-category">🛍 E-commerce · Templates para criadores de conteúdo</div>
+            <p class="card-desc">Plataforma de venda de templates de portfólio para UGC creators e criadores de conteúdo. Landing page completa e persuasiva com templates editáveis prontos para usar — desenhados para ajudar criadores a conquistar brand deals sem partir do zero. Produto 100% acabado, do design ao copy.</p>
+            <div class="card-footer">
+              <div class="tech-stack">
+                <span class="tech-badge">HTML</span>
+                <span class="tech-badge">CSS</span>
+                <span class="tech-badge">JavaScript</span>
+                <span class="tech-badge">Stripe</span>
+                <span class="tech-badge">Vercel</span>
+              </div>
+              <span class="card-role">Design + Dev + Copy + Produto</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 02 · DASCÁ -->
+      <div>
+        <div class="project-card" style="--card-color: var(--c2)">
+          <div class="browser">
+            <div class="browser-bar">
+              <div class="b-dot b-dot-r"></div>
+              <div class="b-dot b-dot-y"></div>
+              <div class="b-dot b-dot-g"></div>
+              <div class="b-url">dasca.com.br</div>
+            </div>
+            <div class="browser-screen">
+              <div class="mock-dasca">
+                <div class="dasca-bg-img"></div>
+                <div class="dasca-grain"></div>
+                <div class="dasca-glow"></div>
+                <div class="dasca-content">
+                  <div class="dasca-scarab">🪲</div>
+                  <div class="dasca-wordmark">DASCÁ</div>
+                  <div class="dasca-sub">Handmade Jewelry · Salvador, Bahia</div>
+                  <div class="dasca-line"></div>
+                  <div class="dasca-tagline">Proteção. Raridade. Renascimento.</div>
+                  <div class="dasca-cta">Explorar Coleções</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-top">
+              <h3 class="card-name"><em>Dascá</em></h3>
+              <span class="card-num">02 / site institucional</span>
+            </div>
+            <div class="card-category">💎 Joalheria artesanal · Site editorial</div>
+            <p class="card-desc">Site imersivo para marca de joias handmade criadas em Salvador. Hero com vídeo de fundo, seções de manifesto, coleções e editorial — capturando a identidade da marca centrada no escaravelho egípcio como símbolo de proteção e raridade.</p>
+            <div class="card-footer">
+              <div class="tech-stack">
+                <span class="tech-badge">Next.js</span>
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">TypeScript</span>
+                <span class="tech-badge">Tailwind</span>
+              </div>
+              <span class="card-role">Design + Dev + UI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 03 · CONNECTCAR -->
+      <div>
+        <div class="project-card" style="--card-color: var(--c3)">
+          <div class="browser">
+            <div class="browser-bar">
+              <div class="b-dot b-dot-r"></div>
+              <div class="b-dot b-dot-y"></div>
+              <div class="b-dot b-dot-g"></div>
+              <div class="b-url">app.conectcar.com.br</div>
+            </div>
+            <div class="browser-screen">
+              <div class="mock-car">
+                <div class="car-sidebar">
+                  <div class="car-logo">
+                    <div class="car-logo-text">🚗 ConectCar</div>
+                    <div class="car-logo-sub">Gestão de Veículos</div>
+                  </div>
+                  <div class="car-nav-item active"><span class="car-nav-icon">◼</span> Dashboard</div>
+                  <div class="car-nav-item"><span class="car-nav-icon">🚗</span> Veículos</div>
+                  <div class="car-nav-item"><span class="car-nav-icon">🧮</span> Simulador</div>
+                  <div class="car-nav-item"><span class="car-nav-icon">👤</span> Clientes</div>
+                  <div class="car-nav-item"><span class="car-nav-icon">🤝</span> Negociações</div>
+                  <div class="car-nav-item"><span class="car-nav-icon">⚙</span> Config.</div>
+                </div>
+                <div class="car-main">
+                  <div class="car-header">Dashboard</div>
+                  <div class="car-stats">
+                    <div class="car-stat" style="--sc:#3a7bd5"><div class="car-stat-num">24</div><div class="car-stat-label">Veículos</div></div>
+                    <div class="car-stat" style="--sc:#C9A84C"><div class="car-stat-num">87</div><div class="car-stat-label">Clientes</div></div>
+                    <div class="car-stat" style="--sc:#28c840"><div class="car-stat-num">12</div><div class="car-stat-label">Negociações</div></div>
+                  </div>
+                  <div class="car-table">
+                    <div class="car-table-head">
+                      <span>Veículo</span><span>Ano</span><span>Preço</span><span>Status</span>
+                    </div>
+                    <div class="car-row">
+                      <span>Honda Civic EX</span><span>2022</span><span>R$89k</span>
+                      <span><span class="car-badge" style="background:#e8f5e9;color:#2e7d32">Disponível</span></span>
+                    </div>
+                    <div class="car-row">
+                      <span>Toyota Corolla</span><span>2021</span><span>R$95k</span>
+                      <span><span class="car-badge" style="background:#fff3e0;color:#e65100">Reservado</span></span>
+                    </div>
+                    <div class="car-row">
+                      <span>VW Golf GTI</span><span>2023</span><span>R$142k</span>
+                      <span><span class="car-badge" style="background:#e8f5e9;color:#2e7d32">Disponível</span></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-top">
+              <h3 class="card-name">Connect<em>Car</em></h3>
+              <span class="card-num">03 / sistema fullstack</span>
+            </div>
+            <div class="card-category">⚙️ SaaS · Gestão de revendas de veículos</div>
+            <p class="card-desc">Sistema completo para revendas de veículos. Módulos de estoque, cadastro de clientes, controle de negociações, simulador de financiamento e configurações — com autenticação e banco de dados em tempo real via Supabase.</p>
+            <div class="card-footer">
+              <div class="tech-stack">
+                <span class="tech-badge">Next.js</span>
+                <span class="tech-badge">Supabase</span>
+                <span class="tech-badge">TypeScript</span>
+                <span class="tech-badge">Tailwind</span>
+              </div>
+              <span class="card-role">Design + Dev + Fullstack</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 04 · DESINK -->
+      <div>
+        <div class="project-card" style="--card-color: var(--c4)">
+          <div class="browser">
+            <div class="browser-bar" style="background:#1a1f1e">
+              <div class="b-dot b-dot-r"></div>
+              <div class="b-dot b-dot-y"></div>
+              <div class="b-dot b-dot-g"></div>
+              <div class="b-url" style="background:#252b29;color:#555">app.desink.tattoo</div>
+            </div>
+            <div class="browser-screen">
+              <div class="mock-desink">
+                <div class="de-sidebar">
+                  <div style="padding:0 4px 8px">
+                    <div class="de-logo-text">D≡SINK.</div>
+                    <div class="de-logo-sub">Tattoo Removal Studio</div>
+                  </div>
+                  <div class="de-divider"></div>
+                  <div class="de-nav">
+                    <div class="de-nav-item active">◼ Dashboard</div>
+                    <div class="de-nav-item">👤 Clientes</div>
+                    <div class="de-nav-item">📅 Sessões</div>
+                    <div class="de-nav-item">⚙ Config.</div>
+                  </div>
+                </div>
+                <div class="de-main">
+                  <div class="de-date">sábado, 27 de junho de 2026</div>
+                  <div class="de-header">Dashboard</div>
+                  <div class="de-stats">
+                    <div class="de-stat"><div class="de-stat-num">3</div><div class="de-stat-label">Sessões hoje</div></div>
+                    <div class="de-stat"><div class="de-stat-num">47</div><div class="de-stat-label">Clientes ativos</div></div>
+                    <div class="de-stat"><div class="de-stat-num">2</div><div class="de-stat-label">Sem agendamento</div></div>
+                  </div>
+                  <div class="de-sessions">
+                    <div class="de-session-row">
+                      <div class="de-session-dot" style="background:#1AC753"></div>
+                      <span class="de-session-name">Ana Beatriz Santos</span>
+                      <span class="de-session-time">09:00</span>
+                      <span class="de-session-badge" style="background:rgba(26,199,83,.12);color:#1AC753">Sessão 3</span>
+                    </div>
+                    <div class="de-session-row">
+                      <div class="de-session-dot" style="background:#febc2e"></div>
+                      <span class="de-session-name">Lucas Oliveira</span>
+                      <span class="de-session-time">11:30</span>
+                      <span class="de-session-badge" style="background:rgba(254,188,46,.12);color:#febc2e">Sessão 1</span>
+                    </div>
+                    <div class="de-session-row">
+                      <div class="de-session-dot" style="background:#1AC753"></div>
+                      <span class="de-session-name">Marina Costa</span>
+                      <span class="de-session-time">14:00</span>
+                      <span class="de-session-badge" style="background:rgba(26,199,83,.12);color:#1AC753">Sessão 5</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-top">
+              <h3 class="card-name">De<em>sink</em></h3>
+              <span class="card-num">04 / sistema fullstack</span>
+            </div>
+            <div class="card-category">🔮 Clínica de remoção de tatuagem · Sistema de gestão</div>
+            <p class="card-desc">Sistema de gestão para clínicas de remoção de tatuagem. Dashboard inteligente com visão do dia — sessões de ontem, hoje e amanhã, alertas de clientes sem agendamento e risco de abandono. Módulos completos de clientes e sessões com histórico, autenticação segura e tempo real via Supabase.</p>
+            <div class="card-footer">
+              <div class="tech-stack">
+                <span class="tech-badge">Next.js</span>
+                <span class="tech-badge">Supabase</span>
+                <span class="tech-badge">TypeScript</span>
+                <span class="tech-badge">shadcn/ui</span>
+              </div>
+              <span class="card-role">Design + Dev + Fullstack</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 05 · SITE UGC -->
+      <div>
+        <div class="project-card" style="--card-color: var(--c5)">
+          <div class="browser">
+            <div class="browser-bar">
+              <div class="b-dot b-dot-r"></div>
+              <div class="b-dot b-dot-y"></div>
+              <div class="b-dot b-dot-g"></div>
+              <div class="b-url">giuliaoceano.com</div>
+            </div>
+            <div class="browser-screen">
+              <div class="mock-ugc">
+                <div class="ugc-nav">
+                  <span class="ugc-logo">Giulia.</span>
+                  <div class="ugc-nav-links">
+                    <span>Sobre</span><span>Nichos</span><span>Serviços</span><span>Projetos</span>
+                  </div>
+                </div>
+                <div class="ugc-hero">
+                  <div class="ugc-text">
+                    <span class="ugc-tag">🌸 bióloga · fotógrafa · UGC creator</span>
+                    <div class="ugc-headline">conteúdo feito por quem<br />observa <em>de perto</em></div>
+                    <div class="ugc-sub">crio para marcas de beleza, wellness e lifestyle que querem parecer <em>reais</em> — não produzidas.</div>
+                    <div class="ugc-ctas">
+                      <span class="ugc-btn-p">ver o que eu faço</span>
+                      <span class="ugc-btn-g">vamos conversar</span>
+                    </div>
+                  </div>
+                  <div class="ugc-visual">
+                    <div class="ugc-card">
+                      <div class="ugc-flor1">🌸</div>
+                      <div class="ugc-flor2">🌺</div>
+                      <div class="ugc-photo">🌿</div>
+                      <div class="ugc-name">Giulia Oceano</div>
+                      <div class="ugc-handle">@oigiuoceano</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ugc-marquee">
+                  <div class="ugc-marquee-inner">
+                    <span>UGC</span><span>·</span><span>Skincare</span><span>·</span><span>Wellness</span><span>·</span><span>Lifestyle</span><span>·</span><span>Bióloga</span><span>·</span><span>Fotografia</span><span>·</span><span>Conteúdo Real</span><span>·</span>
+                    <span>UGC</span><span>·</span><span>Skincare</span><span>·</span><span>Wellness</span><span>·</span><span>Lifestyle</span><span>·</span><span>Bióloga</span><span>·</span><span>Fotografia</span><span>·</span><span>Conteúdo Real</span><span>·</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-top">
+              <h3 class="card-name">Portfólio <em>UGC</em></h3>
+              <span class="card-num">05 / marca pessoal</span>
+            </div>
+            <div class="card-category">🌸 Portfólio pessoal · UGC Creator</div>
+            <p class="card-desc">Site portfólio pessoal completamente customizado do zero — sem templates. Identidade visual única com elementos florais, tipografia editorial e copy autoral posicionando Giulia como bióloga, fotógrafa e criadora de conteúdo para marcas de beleza, wellness e lifestyle. Cada pixel pensado para refletir um olhar real.</p>
+            <div class="card-footer">
+              <div class="tech-stack">
+                <span class="tech-badge">HTML</span>
+                <span class="tech-badge">CSS</span>
+                <span class="tech-badge">JavaScript</span>
+                <span class="tech-badge">Design autoral</span>
+              </div>
+              <span class="card-role">Design + Dev + Copy + Branding</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="sobre">
+    <div class="about-inner">
+      <div class="about-left">
+        <span class="section-tag">// sobre mim</span>
+        <h2 class="section-title">criando com<br /><em>intenção</em></h2>
+        <div class="about-text">
+          <p>Sou web designer e desenvolvedora com olho afiado para estética e pé no código. Gosto de projetos que têm alma — onde o visual e o funcional andam juntos desde o primeiro rascunho.</p>
+          <p>Do site de joalheria ao sistema de gestão de clínica, cada projeto foi construído com atenção aos detalhes que fazem a diferença: tipografia, hierarquia visual, UX e código limpo.</p>
+          <p
